@@ -30,8 +30,6 @@ public class Lexicons {
             e.printStackTrace();
         }
 
-        // Print the total number of words
-        System.out.println("\nLexicon successfully processed! Number of words is: "+lexWords.size());
     }
 
     // Method to process a line of text
