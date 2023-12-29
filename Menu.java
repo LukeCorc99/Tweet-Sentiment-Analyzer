@@ -23,7 +23,20 @@ public class Menu {
             System.out.println("Select Option 1-3 or press any other key to quit.");
             String option = scanner.next();
             if (option.equals("1")) {
-                // Handle option 1
+                System.out.println("Please choose a lexicon:");
+System.out.println("• afinn.txt");
+System.out.println("• bingliu.txt");
+System.out.println("• mpqa.txt");
+System.out.println("• textblob.txt");
+System.out.println("• vader.txt");
+System.out.print("Enter your choice: ");
+Lexicons lexicons = new Lexicons();
+                String lex = scanner.next();
+                try {
+                    lexicons.go(lex);
+                } catch (Exception e) {
+                    System.out.println("Error occured while processing the lexicon: " + e.getMessage());
+                }
             } else if (option.equals("2")) {
                 // Handle option 2
             } else if (option.equals("3")) {
