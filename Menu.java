@@ -35,7 +35,7 @@ public class Menu {
                 Lexicons lexicons = new Lexicons();
                 String lex = "";
                 boolean validInput = false;
-                 ConcurrentSkipListMap<String, Double> lexWordsCopy = new ConcurrentSkipListMap<>();
+                ConcurrentSkipListMap<String, Double> lexWordsCopy = new ConcurrentSkipListMap<>();
             
                 while (!validInput) {
                     System.out.print("Enter path to your desired lexicon: ");
@@ -58,6 +58,11 @@ public class Menu {
                 }
             
             } else if (option.equals("2")) {
+                System.out.print("Enter the path to the tweet file (remember to add .txt at the end): ");
+                String tweetFile = scanner.next();
+
+                Tweets tweets = new Tweets();
+
                 // Handle option 2
             } else if (option.equals("3")) {
                 // Handle option 3
@@ -72,36 +77,33 @@ public class Menu {
                 printProgress(i + 1, size);
                 Thread.sleep(10);
             }
-            
         }
     }
 
-
     // Assuming printProgress method is defined somewhere in your class or imported from elsewhere
-    	/*
-	 *  Terminal Progress Meter
-	 *  -----------------------
-	 *  You might find the progress meter below useful. The progress effect 
-	 *  works best if you call this method from inside a loop and do not call
-	 *  System.out.println(....) until the progress meter is finished.
-	 *  
-	 *  Please note the following carefully:
-	 *  
-	 *  1) The progress meter will NOT work in the Eclipse console, but will
-	 *     work on Windows (DOS), Mac and Linux terminals.
-	 *     
-	 *  2) The meter works by using the line feed character "\r" to return to
-	 *     the start of the current line and writes out the updated progress
-	 *     over the existing information. If you output any text between 
-	 *     calling this method, i.e. System.out.println(....), then the next
-	 *     call to the progress meter will output the status to the next line.
-	 *      
-	 *  3) If the variable size is greater than the terminal width, a new line
-	 *     escape character "\n" will be automatically added and the meter won't
-	 *     work properly.  
-	 *  
-	 * 
-	 */
+    /*
+     *  Terminal Progress Meter
+     *  -----------------------
+     *  You might find the progress meter below useful. The progress effect 
+     *  works best if you call this method from inside a loop and do not call
+     *  System.out.println(....) until the progress meter is finished.
+     *  
+     *  Please note the following carefully:
+     *  
+     *  1) The progress meter will NOT work in the Eclipse console, but will
+     *     work on Windows (DOS), Mac and Linux terminals.
+     *     
+     *  2) The meter works by using the line feed character "\r" to return to
+     *     the start of the current line and writes out the updated progress
+     *     over the existing information. If you output any text between 
+     *     calling this method, i.e. System.out.println(....), then the next
+     *     call to the progress meter will output the status to the next line.
+     *      
+     *  3) If the variable size is greater than the terminal width, a new line
+     *     escape character "\n" will be automatically added and the meter won't
+     *     work properly.  
+     */
+
 	public static void printProgress(int index, int total) {
 		if (index > total) return;	//Out of range
         int size = 50; 				//Must be less than console width
