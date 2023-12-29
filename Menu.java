@@ -24,26 +24,27 @@ public class Menu {
             String option = scanner.next();
             if (option.equals("1")) {
                 System.out.println("Please choose a lexicon:");
-                System.out.println("• afinn.txt");
-                System.out.println("• bingliu.txt");
-                System.out.println("• mpqa.txt");
-                System.out.println("• textblob.txt");
-                System.out.println("• vader.txt");
+                System.out.println("• ./Lexicons/afinn.txt");
+                System.out.println("• ./Lexicons/bingliu.txt");
+                System.out.println("• ./Lexicons/mpqa.txt");
+                System.out.println("• ./Lexicons/textblob.txt");
+                System.out.println("• ./Lexicons/vader.txt");
             
                 Lexicons lexicons = new Lexicons();
                 String lex = "";
                 boolean validInput = false;
             
                 while (!validInput) {
-                    System.out.print("Enter your choice: ");
+                    System.out.print("Enter path to your desired lexicon: ");
                     lex = scanner.next();
             
-                    if (lex.equals("afinn.txt") || lex.equals("bingliu.txt") || lex.equals("mpqa.txt") || lex.equals("textblob.txt") || lex.equals("vader.txt")) {
+                    if (lex.equals("./Lexicons/afinn.txt") || lex.equals("./Lexicons/bingliu.txt") || lex.equals("./Lexicons/mpqa.txt") || lex.equals("./Lexicons/textblob.txt") || lex.equals("./Lexicons/vader.txt")) {
                         validInput = true;
                     } else {
-                        System.out.println("Lexicon does not exist! Please enter again.");
+                        System.out.println("Lexicon does not exist/path invalid! Please enter again.");
                     }
                 }
+            
             
                 try {
                     lexicons.go(lex);
