@@ -22,9 +22,14 @@ public class Menu {
             System.out.print(ConsoleColour.BLACK_BOLD_BRIGHT);
             System.out.println("Select Option 1-3 or press any other key to quit.");
             String option = scanner.next();
-            if (option.equals("1") || option.equals("2") || option.equals("3")) {
-                // Handle the selected option
+            if (option.equals("1")) {
+                // Handle option 1
+            } else if (option.equals("2")) {
+                // Handle option 2
+            } else if (option.equals("3")) {
+                // Handle option 3
             } else {
+                System.out.println("Goodbye!");
                 System.exit(0);
             }
 
