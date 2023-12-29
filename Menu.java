@@ -24,19 +24,33 @@ public class Menu {
             String option = scanner.next();
             if (option.equals("1")) {
                 System.out.println("Please choose a lexicon:");
-System.out.println("• afinn.txt");
-System.out.println("• bingliu.txt");
-System.out.println("• mpqa.txt");
-System.out.println("• textblob.txt");
-System.out.println("• vader.txt");
-System.out.print("Enter your choice: ");
-Lexicons lexicons = new Lexicons();
-                String lex = scanner.next();
+                System.out.println("• afinn.txt");
+                System.out.println("• bingliu.txt");
+                System.out.println("• mpqa.txt");
+                System.out.println("• textblob.txt");
+                System.out.println("• vader.txt");
+            
+                Lexicons lexicons = new Lexicons();
+                String lex = "";
+                boolean validInput = false;
+            
+                while (!validInput) {
+                    System.out.print("Enter your choice: ");
+                    lex = scanner.next();
+            
+                    if (lex.equals("afinn.txt") || lex.equals("bingliu.txt") || lex.equals("mpqa.txt") || lex.equals("textblob.txt") || lex.equals("vader.txt")) {
+                        validInput = true;
+                    } else {
+                        System.out.println("Lexicon does not exist! Please enter again.");
+                    }
+                }
+            
                 try {
                     lexicons.go(lex);
                 } catch (Exception e) {
                     System.out.println("Error occured while processing the lexicon: " + e.getMessage());
                 }
+            
             } else if (option.equals("2")) {
                 // Handle option 2
             } else if (option.equals("3")) {

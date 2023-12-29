@@ -34,7 +34,7 @@ public class Lexicons {
 		}
 
 		// Print the total number of words
-		out.println(lexWords.size());
+		out.println("\nLexicon successfully processed! Number of words is: "+lexWords.size());
 	}
 
 	// Method to process a line of text
