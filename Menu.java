@@ -1,31 +1,43 @@
+//package ie.atu.sw;
+
+import java.util.Scanner;
+
 public class Menu {
     public void displayMenu() throws InterruptedException {
-        System.out.println(ConsoleColour.WHITE);
-        System.out.println("************************************************************");
-        System.out.println("*     ATU - Dept. of Computer Science & Applied Physics    *");
-        System.out.println("*                                                          *");
-        System.out.println("*             Virtual Threaded Sentiment Analyser          *");
-        System.out.println("*                                                          *");
-        System.out.println("************************************************************");
-        System.out.println("(1) Specify a Text File");
-        System.out.println("(2) Specify a URL");
-        System.out.println("(3) Specify an Output File (default: ./out.txt)");
-        System.out.println("(4) Configure Lexicons");
-        System.out.println("(5) Execute, Analyse and Report");
-        System.out.println("(?) Optional Extras...");
-        System.out.println("(?) Quit");
+        Scanner scanner = new Scanner(System.in);
+       
 
-        System.out.print(ConsoleColour.BLACK_BOLD_BRIGHT);
-        System.out.print("Select Option [1-4]>");
-        System.out.println();
+        while (true) {
+            System.out.println(ConsoleColour.WHITE);
+            System.out.println("************************************************************");
+            System.out.println("*     ATU - Dept. of Computer Science & Applied Physics    *");
+            System.out.println("*             Virtual Threaded Sentiment Analyser          *");
+            System.out.println("*                      by Luke Corcoran                    *");
+            System.out.println("*                      G00410404                           *");
+            System.out.println("************************************************************");
+            System.out.println("(1) Configure Lexicons");
+            System.out.println("(2) Specify a Text File");
+            System.out.println("(3) Execute, Analyse and Report");
 
-        System.out.print(ConsoleColour.YELLOW);
-        int size = 100;
-        for (int i =0 ; i < size ; i++) {
-            printProgress(i + 1, size);
-            Thread.sleep(10);
+            System.out.print(ConsoleColour.BLACK_BOLD_BRIGHT);
+            System.out.println("Select Option 1-3 or press any other key to quit.");
+            String option = scanner.next();
+            if (option.equals("1") || option.equals("2") || option.equals("3")) {
+                // Handle the selected option
+            } else {
+                System.exit(0);
+            }
+
+            System.out.print(ConsoleColour.YELLOW);
+            int size = 100;
+            for (int i = 0; i < size; i++) {
+                printProgress(i + 1, size);
+                Thread.sleep(10);
+            }
+            
         }
     }
+
 
     // Assuming printProgress method is defined somewhere in your class or imported from elsewhere
     	/*
