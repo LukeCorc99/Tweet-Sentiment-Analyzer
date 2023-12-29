@@ -50,4 +50,8 @@ public class Lexicons {
             lexWords.put(word, score);
         }
     }
+
+	public ConcurrentSkipListMap<String, Double> getLexWords() {
+		return lexWords;
+	}
 }

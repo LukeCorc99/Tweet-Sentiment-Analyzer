@@ -1,6 +1,8 @@
 //package ie.atu.sw;
 
+import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 public class Menu {
     public void displayMenu() throws InterruptedException {
@@ -33,6 +35,7 @@ public class Menu {
                 Lexicons lexicons = new Lexicons();
                 String lex = "";
                 boolean validInput = false;
+                 ConcurrentSkipListMap<String, Double> lexWordsCopy = new ConcurrentSkipListMap<>();
             
                 while (!validInput) {
                     System.out.print("Enter path to your desired lexicon: ");
@@ -45,9 +48,11 @@ public class Menu {
                     }
                 }
             
-            
                 try {
                     lexicons.go(lex);
+                    lexWordsCopy.putAll(lexicons.getLexWords());
+                     // Print the contents of lexWordsCopy
+                    System.out.println("Lexicon successfully processed! Number of words is: "+lexWordsCopy.size());
                 } catch (Exception e) {
                     System.out.println("Error occured while processing the lexicon: " + e.getMessage());
                 }
