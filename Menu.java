@@ -12,7 +12,7 @@ public class Menu {
             System.out.println("************************************************************");
             System.out.println("*     ATU - Dept. of Computer Science & Applied Physics    *");
             System.out.println("*             Virtual Threaded Sentiment Analyser          *");
-            System.out.println("*                      by Luke Corcoran                    *");
+            System.out.println("*                   by Luke Corcoran                       *");
             System.out.println("*                      G00410404                           *");
             System.out.println("************************************************************");
             System.out.println("(1) Configure Lexicons");
