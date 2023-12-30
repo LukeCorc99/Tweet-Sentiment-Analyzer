@@ -18,7 +18,7 @@ public class Menu {
             System.out.println("*     ATU - Dept. of Computer Science & Applied Physics    *");
             System.out.println("*             Virtual Threaded Sentiment Analyser          *");
             System.out.println("*                   by Luke Corcoran                       *");
-            System.out.println("*                      G00410404                           *");
+            System.out.println("*                       G00410404                          *");
             System.out.println("************************************************************");
             System.out.println("(1) Configure Lexicons");
             System.out.println("(2) Specify a Text File");
@@ -83,11 +83,15 @@ public class Menu {
                 }
 
                 
-            } if (option.equals("3")) {
-                System.out.println("Sentiment analysis is now running:\n");
+            }if (option.equals("3")) {
                 Sentiment sentiment = new Sentiment();
-                sentiment.analyse(lexWordsCopy, tweetWordsCopy);
-            } 
+                if (!lexWordsCopy.isEmpty() && !tweetWordsCopy.isEmpty()) {
+                    System.out.println("\nSentiment analysis is now running:\n");
+                    sentiment.analyse(lexWordsCopy, tweetWordsCopy);
+                } else {
+                    System.out.println("Make sure you have configured a lexicon and specified a tweet file before running the analysis!");
+                }
+            }
 
             System.out.print(ConsoleColour.YELLOW);
             int size = 100;
