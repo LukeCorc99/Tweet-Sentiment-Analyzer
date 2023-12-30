@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("************************************************************");
             System.out.println("(1) Configure Lexicons");
             System.out.println("(2) Specify a Text File");
-            System.out.println("(3) Execute, Analyse and Report");
+            System.out.println("(3) Execute sentiment analysis");
 
             System.out.print(ConsoleColour.BLACK_BOLD_BRIGHT);
             System.out.println("Select Option 1-3, 0 to reload menu or press any other key to quit.");
