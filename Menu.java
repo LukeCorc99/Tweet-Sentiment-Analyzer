@@ -58,12 +58,24 @@ public class Menu {
                 }
             
             } else if (option.equals("2")) {
+
+                ConcurrentSkipListMap<String, String> tweetWordsCopy = new ConcurrentSkipListMap<>();
+
                 System.out.print("Enter the path to the tweet file (remember to add .txt at the end): ");
                 String tweetFile = scanner.next();
 
                 Tweets tweets = new Tweets();
 
-                // Handle option 2
+                try {
+                    tweets.go(tweetFile);
+                    tweetWordsCopy.putAll(tweets.getTweetWords());
+                     // Print the contents of lexWordsCopy
+                    System.out.println("Tweet successfully processed! Number of words is: "+tweetWordsCopy.size());
+                } catch (Exception e) {
+                    System.out.println("Tweet does not exist/path invalid! Please enter again.");
+                }
+
+                
             } else if (option.equals("3")) {
                 // Handle option 3
             } else {
