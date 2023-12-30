@@ -23,14 +23,8 @@ public class Tweets {
         try (var pool = Executors.newVirtualThreadPerTaskExecutor()) {
             // Read each line of the file and process it in a separate thread
             Files.lines(Paths.get(tweet)).forEach(text -> pool.execute(() -> process(text, ++line)));
-        } catch (IOException e) {
-            // Handle any IOExceptions that might be thrown when reading the file
-            e.printStackTrace();    
-        } catch (Exception e) {
-            // Handle any other exceptions that might be thrown when processing the text
-            e.printStackTrace();         
-        }
-      
+        } catch (IOException e) {  
+        } catch (Exception e) {}
 
     }
 
