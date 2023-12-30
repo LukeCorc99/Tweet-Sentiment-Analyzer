@@ -69,7 +69,6 @@ public class Menu {
                 try {
                     tweets.go(tweetFile);
                     tweetWordsCopy.putAll(tweets.getTweetWords());
-                    System.out.println(tweetWordsCopy);
                      while (tweetWordsCopy.size() == 0) {
                          System.out.println("Tweet does not exist/path invalid! Please enter again.");
                          System.out.print("Enter the path to the tweet file (remember to add .txt at the end): ");
