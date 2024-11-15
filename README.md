@@ -1,4 +1,4 @@
-**Sentiment Analyzer by Luke Corcoran**
+# Sentiment Analyzer by Luke Corcoran
 
 **Overview**
 
